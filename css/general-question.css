@@ -1,0 +1,64 @@
+/*The styleSheet is for regular format pages*/
+h1 small{
+    font-size: 55%;
+}
+.col-md-10 h1,
+.col-md-10 h3{
+    text-align: center;
+    color: #6b2973;
+}
+.col-md-10 textarea{
+    height: 200px;
+}
+.col-md-10 h1{
+    font-weight: 600;
+}
+.col-md-10 h3{
+    color: #7765a3;
+}
+.form-group span{
+    padding-left: 20px;
+    float: left;
+}
+.p4-label{
+    margin-bottom: 0;
+    margin-top: 2%;
+}
+
+.side-bar a, .chat-tips i {
+    background:  #ddd;
+}
+
+.side-bar {
+    width: 66px;
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+}
+.icon-ad h4{
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: #7765a3;
+    font-weight: 600;
+}
+
+.side-bar a {
+    width: 66px;
+    height: 66px;
+    display: inline-block;
+    background-color: #ddd;
+    margin-bottom: 2px;
+}
+.side-bar a:hover {
+    background-color: #e8d593;
+    text-decoration: none;
+}
+.side-bar .icon-ad {
+    background-position: 0 -62px;
+}
+
+

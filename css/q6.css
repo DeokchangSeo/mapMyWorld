@@ -1,0 +1,47 @@
+.ui-tabs-vertical { width: 55em; }
+.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+
+
+
+.col-md-10 textarea{
+    height: 200px;
+}
+.col-md-10 h3{
+    color: #6b2973;
+}
+.col-md-6 h3{
+    font-size: 20px;
+    color: #7765a3;
+}
+.ui-widget-header{
+    border: none;
+    background:#6b2973;
+}
+th{
+    font-size: 20px;
+    color: #db8c25;
+    text-align: center;
+}
+
+#tabs{
+    margin-top: 20px;
+}
+.btn-lg{
+    margin-top: 5%;
+}
+.btn-primary{
+    background:#6b2973;
+    border-color:#6b2973;
+    color: #ffffff;
+}
+.btn-primary:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-primary:hover,.btn-primary:focus,.btn-primary:visited,.btn-primary:active{
+    background:#6b2973;
+    color: #ffffff;
+}

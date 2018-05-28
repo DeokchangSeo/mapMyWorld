@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map My World</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:700" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/congrat.css" rel="stylesheet">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+        <div class="row clearfix" >
+            <div class="col-md-12 column" style="margin-top:5%; text-align: center">
+                <div class="content">congratulations</div>
+            </div>
+
+            <div class="col-md-12 column form-group">
+                <h3>Do the survey again
+                <button type="button" class="btn b</h3>tn-default btn-sm" onclick="javascript:location.href='index.html'">
+                    <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
+                </button></h3>
+            </div>
+            <div class="col-md-8 col-md-offset-2 column media-box">
+                <h3>Produced by</h3>
+                <div class="media">
+                    <div class="media-left">
+                            <img class="media-object" src="img/image6.gif" alt="Qianyu Jin">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Qianyu Jin</h4>
+                        <p>Front-end developer. QuT MIT student, major in Network</p>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <img class="media-object" src="img/image7.gif" alt="Deokchang Seo">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Deokchang Seo</h4>
+                        <p>Back-end developer. QuT MIT student, major in Data Sciense</p>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <img class="media-object" src="img/image8.gif" alt="Siliang Bai">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Siliang Bai</h4>
+                        <p>Back-end developer. QuT MIT student, major in Computer Sciense</p>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+    <script type="text/javascript">
+//        word-animation
+        'use strict';
+        var container = document.querySelector('.content');
+        var content = container.innerText;
+
+        function formatContent(content, container) {
+            var contentArray = content.split(' ');
+            var formattedContent = document.createElement('div');
+            contentArray.map(function (word) {
+                formattedContent.appendChild(createWord(word));
+            });
+            console.log(contentArray);
+
+            container.replaceChild(formattedContent, container.firstChild);
+        };
+
+        function createWord(characters) {
+            var word = document.createElement('div');
+            var wordArray = characters.split('');
+            wordArray.map(function (char) {
+                word.appendChild(formatCharacter(char));
+            });
+            word.appendChild(formatCharacter('&nbsp;'));
+            return word;
+        }
+
+        function formatCharacter(text) {
+            var text = text === ' ' ? '&nbsp;' : text;
+            var character = document.createElement('span');
+            character.innerHTML = text;
+            return character;
+        }
+        formatContent(content, container);
+
+
+    </script>
+</body>
+</html>

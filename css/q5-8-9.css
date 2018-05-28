@@ -1,0 +1,22 @@
+/* Stylesheet for tab pages, used for page 5/8/9*/
+
+.col-md-10 textarea{
+    height: 100px;
+}
+.col-md-10 h3{
+    color: #6b2973;
+}
+.col-md-6 h3{
+    font-size: 20px;
+    color: #7765a3;
+}
+.ui-widget-header{
+    border: none;
+    background:#6b2973;
+}
+th{
+    font-size: 20px;
+    color: #6b2973;
+    text-align: center;
+}
+

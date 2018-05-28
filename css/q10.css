@@ -1,0 +1,16 @@
+.col-md-10 textarea{
+    height: 150px;
+}
+.col-md-10 h3{
+    color: #6b2973;
+}
+thead th{
+    font-size: 20px;
+    color: #7765a3;
+    text-align: center;
+}
+tbody th{
+    font-size: 20px;
+    color: #888888;
+    text-align: center;
+}

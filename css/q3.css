@@ -1,0 +1,30 @@
+.wrap{
+    background:#ffffff url('../img/image5.gif') no-repeat;
+    background-position: 60% 50%;
+}
+.col-md-10 h1,
+.col-md-10 h3{
+    text-align: center;
+    color: #6b2973;
+}
+.col-md-10 h1{
+    font-weight: 600;
+}
+.col-md-10 h4{
+    color: #7765a3;
+    display: inline-block;
+}
+.form-group span{
+    padding-left: 20px;
+    float: left;
+}
+.col-md-3 textarea
+{
+    height: 80px;
+}
+.col-md-12 textarea
+{
+    width: 25%;
+	height: 80px;
+
+}

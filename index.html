@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/navigation.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <title>Map My World</title>
+</head>
+<body onload="checkcookie()">
+<div class="container-fluid">
+    <div class="row clearfix wrap" style="background:#ffffff url('img/image4.gif') no-repeat; background-position: 90% 60%;">
+        <div class="content">
+            <div class="col-xs-6 col-md-2 column nav-bar">
+                <div class="top-area">
+                    <a href="index.html"><img src="img/logo-index.gif" class="img-responsive center-block" alt="logo" style="padding-bottom: 10px"/></a>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="cookie-panel"></div>
+                    </div>
+                </div>
+                <nav class="com__nav">
+                    <ul class="com__nav-list">
+                        <li class="com__nav-item q1">
+                            <a href="q1.html" class="com__nav-link centered cq1">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">Who I am</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q2">
+                            <a href="q2.html" class="com__nav-link centered cq2">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">The ways I communicate and make decisions</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q3">
+                            <a href="q3.html" class="com__nav-link centered cq3">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">Important people to me</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q4">
+                            <a href="q4.html" class="com__nav-link centered cq4">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My home</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q5">
+                            <a href="q5.html" class="com__nav-link centered cq5">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My daily activities</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q6">
+                            <a href="q6.html" class="com__nav-link centered cq6">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My weekly supports</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q7">
+                            <a href="q7.html" class="com__nav-link centered cq7">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My health and wellbeing</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q8">
+                            <a href="q8.html" class="com__nav-link centered cq8">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My programs and therapy supports</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q9">
+                            <a href="q9.html" class="com__nav-link centered cq9">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My equipment, aid or modification support</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q10">
+                            <a href="q10.html" class="com__nav-link centered cq10">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">How I wish my week looked</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q11">
+                            <a href="q11.html" class="com__nav-link centered cq11">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My short term dreams and goals: next 12 months</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q12">
+                            <a href="q12.html" class="com__nav-link centered cq12">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My long term dreams and goals: the future</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                        <li class="com__nav-item q13">
+                            <a href="q13.html" class="com__nav-link centered cq13">
+                                <h2><span class="blue-line animate scaleIn delay-3 center-block">My ultimate bucket list</span></h2>
+                                <span class="white-circle glyphicon white-circle glyphicon-heart animate scaleIn delay-5 center-block"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-xs-6 col-md-10 column" style="padding: 0;">
+                <div id="myCarousel" class="carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="img/image1.gif" alt="First slide">
+                            <div class="carousel-caption">
+                                <h1>Welcome to Mapping My World</h1>
+                                <h3>My Journey, My way</h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/image2.gif" alt="Second slide">
+                            <div class="carousel-caption">
+                                <h3>What is this booklet for?</h3>
+                                <p>This booklet has been designed to put you at the centre of
+                                    decisions about your life in the NDIS planning process.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/image3.gif" alt="Third slide">
+                            <div class="carousel-caption">
+                                <h3>What is this booklet for?</h3>
+                                <p>This booklet has been designed to put you at the centre of
+                                    decisions about your life in the NDIS planning process.</p>
+                            </div>
+                        </div>
+                        <!-- 轮播（Carousel）导航 -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="white-circle glyphicon white-circle glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="white-circle glyphicon white-circle glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <!-- 控制按钮 -->
+                    <div style="text-align:center;">
+                        <input type="button" class="btn start-slide btn-carousel" value="Start">
+                        <input type="button" class="btn pause-slide btn-carousel" value="Pause">
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <h1>HELLO, My Name Is</h1>
+                    <div class="form-group">
+                        <input class="form-control input-lg" type="text" id="user" placeholder="My Name Is...">
+                    </div>
+                    <h1>Email</h1>
+                    <div class="form-group">
+                        <input class="form-control input-lg" type="text" id="email" name="email-name"
+                               placeholder="Email Address">
+                        <div class="email-dropdown">
+                            <ul class="list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default btn-lg center-block" onclick=startPageHandler()>
+                    <span class="white-circle glyphicon white-circle glyphicon-circle-arrow-up" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="row clearfix col-xs-12 column footer" id="footer">
+            <address>
+                <strong>Contact Us</strong>
+                <abbr title="Phone">P:</abbr> 1800 112 112
+                <br>
+                This booklet has been designed to put you at the centre of
+                decisions about your life in the NDIS planning process.
+                <br>
+                It helps you prepare for your NDIS planning meeting.
+                It is designed to help you think about how you’d like to live
+                your life – now and in the future.<br>
+            </address>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var m = {
+        user: "",
+        email: ""
+    };
+
+    startPageHandler = function() {
+        var requestData = loginDetailsFormValid();
+        if (requestData !== null) {
+//            set Cookie
+            var user=requestData.user.trim();
+            var email=requestData.email.trim();
+            var d = new Date();
+            d.setTime(d.getTime()+30*24*60*60*1000);
+            var expires="expires="+d.toUTCString();
+            document.cookie = "username="+user+";"+expires+"; path=/;";
+            document.cookie = "email="+email+";"+expires+"; path=/;";
+
+            $.ajax({
+                url: "server/index.php",
+                data: requestData,
+                type: "POST",
+                dataType:'json',
+                success: function (data) {
+                    console.log(data);
+                    var i, x="";
+                    for(i in data.result){
+                        x+=data.result[i];
+                    }
+                    console.log(x);
+                    if (x == "success") {  //new user
+                        console.log("the request and value delivered successfully");
+                        window.location.href = "q1.html";
+                    }
+                    else if(x=="noUser")
+                    {
+                        alert("No Record!\nPlease start from the beginning");
+                        window.location.href="index.html";
+                        console.log("Cookie is destroyed or same email address");
+                    }
+                    else { //existing user
+                        console.log("Thread went through the php, but data failed to deliver");
+                        window.location.href = "q1.html";
+                    }
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    alert ("XMLHttpRequest.status="+XMLHttpRequest.status+"\ntextStatus="+textStatus+"\nerrorThrown=" + errorThrown);
+                   
+                }
+
+            });
+			//window.location.href = "q1.html";
+        }
+        return false;
+    };
+
+    loginDetailsFormValid = function() {
+        var user = document.getElementById("user").value;
+        var email = document.getElementById("email").value;
+
+        if (user === "") {
+            alert("Enter a user name");
+            document.getElementById("user").focus();
+        }
+        else if (email === ""||emailTest()==false) {
+            alert("Enter a email address");
+            document.getElementById("email").focus();
+        }
+        else
+        {
+            requestData = {
+                "user": $("#user").val(),
+                "email": $("#email").val()
+            };
+            return requestData;
+        }
+        return null;
+    };
+
+    function emailTest()
+    {
+        var temp = document.getElementById("email");
+        var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        if(!myreg.test(temp.value))
+        {
+            alert('Please input valid email address');
+            myreg.focus();
+            return false;
+        }
+    }
+
+    //Carousel button
+    $(function(){
+        $(".start-slide").click(function(){
+            $("#myCarousel").carousel('cycle');
+        });
+        $(".pause-slide").click(function(){
+            $("#myCarousel").carousel('pause');
+        });
+    });
+
+</script>
+<script type="text/javascript" src="js/email.js"></script>
+</html>

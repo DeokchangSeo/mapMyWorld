@@ -1,0 +1,19 @@
+/*The styleSheet is for 4 textareas per page. Currently it used by q1,q2*/
+
+.col-md-10{
+    text-align: center;
+    color: #6b2973;
+}
+.col-md-10 textarea{
+    height: 200px;
+}
+.col-md-10 h1{
+    font-weight: 600;
+}
+.col-md-10 h3{
+    color: #7765a3;
+}
+.form-group span{
+    padding-left: 20px;
+    float: left;
+}
