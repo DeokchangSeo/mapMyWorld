@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/general-question.css" rel="stylesheet">
+    <link href="css/navigation.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script>
+        $( document ).ready(function() {
+            var username=getCookie("username");
+            if(username!=null)
+            {
+                requestData = {
+                    "table": "table11"
+                };
+                $.ajax({
+                    url: "server/get_info.php",
+                    data: requestData,
+                    type: "POST",
+                    dataType: 'json',
+                    success: function (data) {
+
+                        if (data.result == "success") {
+                            //alert("success");
+                            console.log(data.return);
+
+                            $.each(data.return, function(key, value) {
+                                //console.log(key + ": "+ data.return[key]);
+                                var value = data.return[key];
+                                $('#'+key).append(value);
+                            });
+                        } else {
+                            console.log(data.return);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <title>Map My World</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row clearfix wrap">
+        <div class="col-xs-6 col-md-2 column nav-bar">
+            <div class="top-area"></div>
+            <div id="left-navigation"></div>
+        </div>
+
+        <div class="col-xs-6 col-md-10 column">
+            <h1>My short term dreams and goals<span style="color: #888888">:next 12 months</span>
+                <small><br><em>Think about: daily living, home, relationships, health & wellbeing, lifelong learning,
+                    work, social & community and choice & control.</em></small></h1>
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Question 11</li>
+            </ol>
+            <div class="row clearfix" style="margin-top: 5%">
+                <div class="col-md-12 column form-group">
+                    <h3><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>Which goals are the most important to you in the next 12 months?</h3>
+                    <textarea id="q11_info1" class="form-control" placeholder="[Example: I’ve got high blood pressure and diabetes]" style="height: 300px"></textarea>
+                </div>
+            </div>
+            <div class="side-bar"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row clearfix footer"></div>
+</body>
+<script>
+    function submitform() {
+        var f = document.getElementsByTagName('textarea');
+        if (f[0].value!=="") {
+            var cart= {"q11_info1": f[0].value};
+            console.log(cart);
+            $.ajax({
+                url: "server/q11.php",
+                data: cart,
+                type: "POST",
+                dataType:'json',
+                success: function (data) {
+                    console.log(data);
+                    var i, x="";
+                    for(i in data.result){
+                        x+=data.result[i];
+                    }
+                    console.log(x);
+                    if (x == "success") {
+                        console.log("the request and value delivered successfully");
+            			window.location.href = "q12.html";
+                    }
+                    else if(x=="noUser")
+                    {
+                        alert("No Record!\nPlease start from the beginning");
+                        window.location.href="index.html";
+                        console.log("Cookie is destroyed or same email address");
+                    }
+                    else {
+                        console.log("Thread went through the php, but data failed to deliver");
+                    }
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    alert ("XMLHttpRequest.status="+XMLHttpRequest.status+"\ntextStatus="+textStatus+"\nerrorThrown=" + errorThrown);
+                }
+            });
+        }else {
+            alert("Please fill the form");
+            console.log("fail")
+        }
+    }
+
+    //    page loading
+    $(".side-bar").load("q1.html .side-bar");
+    $(".top-area").load("q1.html .top-area");
+    $("#left-navigation").load("index.html .com__nav");
+    $(".footer").load("index.html #footer");
+</script>
+
+</html>

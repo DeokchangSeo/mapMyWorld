@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/general-question.css" rel="stylesheet">
+    <link href="css/q6.css" rel="stylesheet">
+    <link href="css/navigation.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script>
+        $( document ).ready(function() {
+            var username=getCookie("username");
+            if(username!=null)
+            {
+                requestData = {
+                    "table": "table6"
+                };
+                $.ajax({
+                    url: "server/get_info.php",
+                    data: requestData,
+                    type: "POST",
+                    dataType: 'json',
+                    success: function (data) {
+
+                        if (data.result == "success") {
+                            //alert("success");
+                            console.log(data.return);
+
+                            $.each(data.return, function(key, value) {
+                                //console.log(key + ": "+ data.return[key]);
+                                var value = data.return[key];
+                                if (key.substr(key.length - 1) == 2) {
+                                	$('#'+key).append(value);
+                                }
+                            });
+                        } else {
+                            console.log(data.return);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <!--style for tabs-->
+    <style>
+        #dialog label, #dialog input { display:block; }
+        #dialog label { margin-top: 0.5em; }
+        #dialog input, #dialog textarea { width: 95%; }
+        #tabs { margin-top: 1em; }
+        #tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+        #add_tab { cursor: pointer; }
+    </style>
+    <title>Map My World</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row clearfix wrap">
+        <div class="col-xs-6 col-md-2 column nav-bar">
+            <div class="top-area"></div>
+            <div id="left-navigation"></div>
+        </div>
+
+        <div class="col-xs-6 col-md-10 column">
+            <h1>My Weekly Supports<small><br><em>Think about who supports you in your activities throughout the week – both your formal
+                and informal supports.</em></small></h1>
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Question 6</li>
+            </ol>
+            <div id="tabs">
+                <ul>
+                    <li><a id="q6_info11" href="#tabs-1">Daily Living</a></li>
+                    <li><a id="q6_info21" href="#tabs-2">Work</a></li>
+                    <li><a id="q6_info31" href="#tabs-3">Learning</a></li>
+                    <li><a id="q6_info41" href="#tabs-4">Social & Community Participation</a></li>
+                    <li><a id="q6_info51" href="#tabs-5">Home</a></li>
+                    <li><a id="q6_info61" href="#tabs-6">Health & Wellbeing</a></li>
+                    <li><a id="q6_info71" href="#tabs-7">Transport</a></li>
+                    <li><a id="q6_info81" href="#tabs-8">Behaviour support</a></li>
+                    <li><a id="q6_info91" href="#tabs-9">Respite</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info12" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-2">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info22" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-3">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info32" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-4">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info42" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-5">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info52" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-6">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info62" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-7">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info72" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-8">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info82" class="form-control" placeholder=""></textarea>
+                </div>
+                <div id="tabs-9">
+                    <h3>Who supports me to do this</h3>
+                    <textarea id="q6_info92" class="form-control" placeholder=""></textarea>
+                </div>
+
+            </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" id="add_tab" class="btn btn-primary btn-lg btn-block center-block" data-toggle="modal" data-target="#myModal" style="font-size: 18px;">
+                Name Your Activity
+            </button>
+
+            <!-- Modal -->
+            <div id="dialog" title="Name your Activity">
+                <form>
+                    <fieldset class="ui-helper-reset">
+                        <label for="tab_title"></label>
+                        <input type="text" name="tab_title" id="tab_title" class="ui-widget-content ui-corner-all" placeholder="Your Activity">
+                        <label for="tab_content"></label>
+                        <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all" placeholder="Your Activity Content"></textarea>
+                    </fieldset>
+                </form>
+            </div>
+
+
+            <div class="side-bar"></div>
+        </div>
+    </div>
+</div>
+<div class="row clearfix footer"></div>
+</body>
+<script>
+    function submitform() {
+        var f = document.getElementsByTagName('textarea');
+        if (f[0].value!==""&&f[1].value!==""&&f[2].value!==""&&f[3].value!==""&&f[4].value!==""&&f[5].value!==""&&f[6].value!==""&&f[7].value!==""&&f[8].value!==""
+            )
+        {
+            var info = {"q6_info11": document.getElementById('q6_info11').innerHTML,"q6_info12": f[0].value,"q6_info21": document.getElementById('q6_info21').innerHTML, "q6_info22": f[1].value,"q6_info31": document.getElementById('q6_info31').innerHTML, "q6_info32": f[2].value, "q6_info41": document.getElementById('q6_info41').innerHTML,"q6_info42": f[3].value,"q6_info51": document.getElementById('q6_info51').innerHTML, "q6_info52": f[4].value,"q6_info61": document.getElementById('q6_info61').innerHTML, "q6_info62": f[5].value, "q6_info71": document.getElementById('q6_info71').innerHTML,"q6_info72": f[6].value, "q6_info81":document.getElementById('q6_info81').innerHTML,"q6_info82": f[7].value,"q6_info91": document.getElementById('q6_info91').innerHTML, "q6_info92": f[8].value
+        };
+            var cart = {"q6": info};
+            console.log(cart);
+            $.ajax({
+                url: "server/q6.php",
+                data: cart,
+                type: "POST",
+                dataType:'json',
+                success: function (data) {
+                    console.log(data);
+                    var i, x="";
+                    for(i in data.result){
+                        x+=data.result[i];
+                    }
+                    console.log(x);
+                    if (x == "success") {
+                        console.log("the request and value delivered successfully");
+                        console.log(data);
+                        window.location.href = "q7.html";
+                    }
+                    else if(x=="noUser")
+                    {
+                        alert("No Record!\nPlease start from the beginning");
+                        window.location.href="index.html";
+                        console.log("Cookie is destroyed or same email address");
+                    }
+                    else {
+                        console.log("Thread went through the php, but data failed to deliver");
+                        console.log(data.return);
+                    }
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    alert ("XMLHttpRequest.status="+XMLHttpRequest.status+"\ntextStatus="+textStatus+"\nerrorThrown=" + errorThrown);
+                }
+            });
+            //window.location.href = "q7.html";
+        }else {
+            alert("Please fill the form");
+            console.log("fail")
+        }
+    }
+
+    //    page loading
+    $(".side-bar").load("q1.html .side-bar");
+    $(".top-area").load("q1.html .top-area");
+    $("#left-navigation").load("index.html .com__nav");
+    $(".footer").load("index.html #footer");
+
+    //tabs controller
+    $( function() {
+        var tabTitle = $( "#tab_title" ),
+            tabContent = $( "#tab_content" ),
+            tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
+            tabCounter = 10,
+            counter = 101;
+
+        var tabs = $( "#tabs" ).tabs();
+
+        // Modal dialog init: custom buttons and a "close" callback resetting the form inside
+        var dialog = $( "#dialog" ).dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: {
+                Add: function() {
+                    addTab(senddata());
+                    $( this ).dialog( "" );
+                },
+                Cancel: function() {
+                    $( this ).dialog( "close" );
+                }
+            },
+            close: function() {
+                form[ 0 ].reset();
+            }
+        });
+
+        // AddTab form: calls addTab function on submit and closes the dialog
+        var form = dialog.find( "form" ).on( "submit", function( event ) {
+            addTab();
+            dialog.dialog( "close" );
+            event.preventDefault();
+        });
+
+        // Actual addTab function: adds new tab using the input from the form above
+        function addTab() {
+            var label = tabTitle.val() || "Tab " + tabCounter,
+                id = "tabs-" + tabCounter,
+                li = $( tabTemplate.replace( /#\{href\}/g, "#" + id ).replace( /#\{label\}/g, label ) ),
+                tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
+
+            tabs.find( ".ui-tabs-nav" ).append( li );
+            tabs.append( "<div id='" + id + "'><p>" + tabContentHtml + "</p></div>" );
+            tabs.tabs( "refresh" );
+            tabCounter++;
+            counter+=10;
+        }
+
+        // AddTab button: just opens the dialog
+        $( "#add_tab" )
+            .button()
+            .on( "click", function() {
+                dialog.dialog( "open" );
+            });
+
+        // Close icon: removing the tab on click
+        tabs.on( "click", "span.ui-icon-close", function() {
+            var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
+            $( "#" + panelId ).remove();
+            tabs.tabs( "refresh" );
+        });
+
+        tabs.on( "keyup", function( event ) {
+            if ( event.altKey && event.keyCode === $.ui.keyCode.BACKSPACE ) {
+                var panelId = tabs.find( ".ui-tabs-active" ).remove().attr( "aria-controls" );
+                $( "#" + panelId ).remove();
+                tabs.tabs( "refresh" );
+            }
+        });
+
+        function senddata() {
+            var titletext=document.getElementsByTagName('input')[0].value;
+            var bodytext=document.getElementsByTagName('textarea')[9].value;
+            var keyt="q6_info" + counter, keyb="q6_info" + (counter+1);
+            // var v="{"+keyt+":"+titletext+","+keyb+":"+bodytext+"}";
+            var v = {};
+			v[keyt] = titletext;
+			v[keyb] = bodytext;
+
+            var d = {"q6_new":v};
+            //var ddd=JSON.stringify(d);
+            console.log(d);
+            $.ajax({
+                url: "server/q6.php",
+                data: d,
+                type: "POST",
+                dataType:'json',
+                success: function (data) {
+                    //console.log(x);
+                    if (data.result == "success") {
+                    	console.log(data);
+                        console.log("success to add the new tab and info");
+                    }
+                    else {
+	                    console.log(data);
+                        console.log("fail to add the new tab and info");
+                    }
+                }
+            });
+        }
+
+    } );
+
+</script>
+
+</html>
